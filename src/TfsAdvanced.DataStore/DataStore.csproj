@@ -12,14 +12,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.1.2" />
-    <PackageReference Include="Redbus" Version="1.0.5" />
+    <PackageReference Include="Redbus" Version="1.0.8" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TfsAdvanced.Models\Models.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.EntityFrameworkCore">
-      <HintPath>C:\Users\bertc\.nuget\packages\microsoft.entityframeworkcore\1.0.3\lib\netstandard1.3\Microsoft.EntityFrameworkCore.dll</HintPath>
-    </Reference>
   </ItemGroup>
 </Project>
