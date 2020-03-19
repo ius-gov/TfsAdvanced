@@ -46,16 +46,16 @@ namespace TfsAdvanced.Updater.Tasks
             ScheduleJob<RepositoryUpdater>(Cron.Hourly());
             ScheduleJob<PoolUpdater>(Cron.Hourly());
 
-            ScheduleJob<ReleaseDefinitionUpdater>(Cron.MinuteInterval(30));
-            ScheduleJob<BuildDefinitionUpdater>(Cron.MinuteInterval(30));
-            ScheduleJob<BuildUpdater>(Cron.MinuteInterval(3));
+            ScheduleJob<ReleaseDefinitionUpdater>(Cron.Hourly());
+            ScheduleJob<BuildDefinitionUpdater>(Cron.Hourly());
+            ScheduleJob<BuildUpdater>(Cron.Hourly());
 
-            var quickUpdateTimer = new System.Timers.Timer(TimeSpan.FromSeconds(30).TotalMilliseconds);
+            var quickUpdateTimer = new System.Timers.Timer(TimeSpan.FromMinutes(30).TotalMilliseconds);
             quickUpdateTimer.Elapsed += ExecuteJobRequestUpdater;
             quickUpdateTimer.AutoReset = true;
             quickUpdateTimer.Enabled = true;
             
-            var pullRequestUpdateTime = new System.Timers.Timer(TimeSpan.FromSeconds(30).TotalMilliseconds);
+            var pullRequestUpdateTime = new System.Timers.Timer(TimeSpan.FromMinutes(30).TotalMilliseconds);
             pullRequestUpdateTime.Elapsed += ExecutePullRequestUpdate;
             pullRequestUpdateTime.AutoReset = true;
             pullRequestUpdateTime.Enabled = true;
